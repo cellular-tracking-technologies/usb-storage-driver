@@ -2,20 +2,20 @@ const { exec } = require('child_process');
 const fs = require('fs')
 
 class MountUsb {
-    constructor(path, drive){
+    constructor(dir, drive){
         this.drive = drive;
-        this.dir = path + "/" + drive;        
+        this.dir = dir;        
     }
     mount(){
         return new Promise((resolve, reject) =>{
             if(fs.existsSync(this.dir) == true){
-                reject(`${this.dir} Exists`);
+                reject(`mount: ? ${this.dir} Exists`);
             } 
             
-            // $ 'mkthis.dir /mnt/${this.drive}'
+            // $ 'mkthis.dir ${this.dir}'
             fs.mkdirSync(this.dir);
 
-            // $ 'mount /dev/sdb1 ${this.path}/${this.drive}'
+            // $ 'mount /dev/${this.drive} ${this.dir}'
             let child = exec(`mount /dev/${this.drive} ${this.dir}`, (error,stdout, stderr) =>{
                 if(error){
                     reject(error);

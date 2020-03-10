@@ -12,7 +12,7 @@ cmd.poll()
 
 let test = () => {
     return new Promise((resolve, reject) =>{
-        let drive = new MountUsb("/mnt","sda1");
+        let drive = new MountUsb("/mnt/usb","sda1");
         
         drive.mount()
         .then((res)=>{
