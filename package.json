@@ -1,0 +1,25 @@
+{
+  "name": "usb-storage-driver",
+  "version": "1.0.0",
+  "description": "Manages mounting and access of USB storage devices for the CTT SensorStation.",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "babel src -d ./lib",
+    "start": "node ./lib/index.js",
+    "debug": "node --inspect ./lib/index.js",
+    "compile": "babel src -d lib --source-maps --watch",
+    "dev": "npm run build && npm run debug",
+    "test": "node ./lib/test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://SheldonBlackshire@bitbucket.org/cellulartrackingtechnologies/usb-storage-driver.git"
+  },
+  "author": "Sheldon Blackshire",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/cellulartrackingtechnologies/usb-storage-driver#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
