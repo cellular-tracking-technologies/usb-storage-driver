@@ -20,6 +20,7 @@
   "homepage": "https://bitbucket.org/cellulartrackingtechnologies/usb-storage-driver#readme",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "ncp": "^2.0.0"
   }
 }
