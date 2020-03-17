@@ -1,6 +1,7 @@
 import BlockDeviceCmd from './block-device-cmd';
 import MountUsb from './mount-usb';
 var ncp = require('ncp').ncp;
+const path = require('path');
 
 class UsbStorage {
     constructor(mount_point="/mnt/usb"){
@@ -43,9 +44,9 @@ class UsbStorage {
         ncp.limit = 16;
         ncp(src, this.mount_point, { filter: pattern}, callback);
     }
-    copyFrom(dest, pattern){
+    copyFrom(src, dest, callback){
         ncp.limit = 16; 
-        ncp(this.mount_point, dest, { filter: pattern}, callback);
+        ncp(path.join(this.mount_point, src), dest, callback);
     }
 }
 
