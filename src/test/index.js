@@ -32,14 +32,15 @@ function testWifi(){
         usb.copyFrom(src, dest, (err) =>{
             if(err){
                 console.log(err);
-            }
+            }else{
             var wifi = JSON.parse(fs.readFileSync(dest, 'utf8'));
            
-            console.log(wifi.ssid);
-            console.log(wifi.psk);
-            console.log(wifi.country);
+                console.log(wifi.ssid);
+                console.log(wifi.psk);
+                console.log(wifi.country);
 
-            console.log(wifi);
+                console.log(wifi);
+            }
         });
         return usb.unmount();
     }).then(()=>{
@@ -50,7 +51,7 @@ function testWifi(){
 }
 
 // testCopy();
-testWifi();
+// testWifi();
 
 // sudo mkdir /mnt/sda1
 // sudo mount -v /dev/sda1 /mnt/sda1
